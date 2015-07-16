@@ -1,17 +1,18 @@
 <h1 class="text-uppercase text-center">Edit a Product</h1>
 
-<form class="user-form" action="/product/edit/<%= product.id%>" method="post">
+<form class="user-form" action="/product/edit/<%= @product.id%>" method="post">
     <label for="name">Product Name</label>
-    <input type="text" name="name" id="name" value="<%= product.name%>" class="form-control" >
+    <input type="text" name="name" id="name" value="<%= @product.name%>" class="form-control" >
     <label for="description">Product Description</label>
-    <textarea cols="3" name="description" id="description" value="<%= product.description %>" class="form-control" ></textarea>
+    <textarea cols="3" name="description" id="description" class="form-control" ><%= @product.description %></textarea>
     <label for="price">Product Price</label>
-    <input type="number" name="price" id="price" value="<%= product.price %>" class="form-control" >
+    <input type="number" name="price" id="price" value="<%= @product.price %>" class="form-control" >
     <label for="brand">Product Category</label>
-    <select name="brand" id="brand" class="form-control">
+    <select name="brand_id" id="brand" class="form-control">
       <% @brands.each do |brand| %>
       <option value="<%= brand.id %>"><%= brand.name %></option>
       <% end %>
+    </select>
     <br>
     <button type="submit" class="btn btn-info">Edit this product</button>
   </form>

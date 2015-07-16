@@ -20,11 +20,13 @@ post "/product/add" do
 end
 
 get "/product/edit/:id" do
-  @products = Product.find(params[:id])
+  @product = Product.find(params[:id])
+  @brands = Brand.all
   erb :edit
 end
 
-# post "/product/edit/:id" do
-#   Product.update(params[:id], params.slice("name", "description", "price", "category"))
-#   redirect "/"
-# end
+post "/product/edit/:id" do
+  p params
+  Product.update(params[:id], params.slice("name", "description", "price", "brand_id"))
+  redirect "/"
+end

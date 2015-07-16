@@ -7,6 +7,6 @@
 <h2>Product List</h2>
   <ul>
     <% @products.each do |product| %>
-    <li><%= product.name %> by <%= product.brand.name %> | <a href="/product/edit/<%= product.id %>">Edit</a></li>
+    <li><%= product.name %> costs you <%= product.price %>€, made by <%= product.brand.name %> | <a href="/product/edit/<%= product.id %>">Edit</a></li>
     <% end %>
   </ul>
