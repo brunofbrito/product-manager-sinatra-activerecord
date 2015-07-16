@@ -31,6 +31,12 @@ post "/product/edit/:id" do
   redirect "/"
 end
 
+get "/product/show/:id" do
+  @product = Product.find(params[:id])
+  @brand = @product.brand.name
+  erb :show
+end
+
 get "/brand/show/:id" do
   @brand = Brand.find(params[:id])
   @products = @brand.products
@@ -56,5 +62,15 @@ end
 
 post "/brand/edit/:id" do
   Brand.update(params[:id], params.slice("name"))
+  redirect "/"
+end
+
+get "/product/remove/:id" do
+  Product.destroy(params[:id])
+  redirect "/"
+end
+
+get "/brand/remove/:id" do
+  Brand.destroy(params[:id])
   redirect "/"
 end

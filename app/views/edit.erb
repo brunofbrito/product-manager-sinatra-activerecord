@@ -10,7 +10,11 @@
     <label for="brand">Product Category</label>
     <select name="brand_id" id="brand" class="form-control">
       <% @brands.each do |brand| %>
-      <option value="<%= brand.id %>"><%= brand.name %></option>
+        <% if brand == @product.brand %>
+          <option value="<%= brand.id %>" selected><%= brand.name %></option>
+        <% else %>
+          <option value="<%= brand.id %>"><%= brand.name %></option>
+        <% end %>
       <% end %>
     </select>
     <br>
