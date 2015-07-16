@@ -1,6 +1,6 @@
 <h1 class="text-uppercase text-center">Store manager</h1>
 
-<h2><span class="glyphicon glyphicon-phone"> Product List</h2>
+<h2><span class="glyphicon glyphicon-phone"></span> Product List</h2>
   <ul>
     <% @products.each do |product| %>
     <li><a href="/product/show/<%= product.id %>"><%= product.name %> costs you <%= product.price %>€</a>
@@ -12,12 +12,12 @@
      | <a href="/product/edit/<%= product.id %>">Edit</a> | <a href="/product/remove/<%= product.id %>">Remove</a></li>
     <% end %>
   </ul>
-  <a href="/product/add">Add a product</a>
+  <a href="/product/add"><span class="glyphicon glyphicon-file"></span> Add a product</a>
 <hr>
-<h2>Category list</h1>
+<h2><span class="glyphicon glyphicon-text-background"></span> Category list</h2>
   <ul>
     <% @brands.each do |brand| %>
     <li><a href="/brand/show/<%= brand.id %>"><%=brand.name %></a> | <a href="/brand/edit/<%= brand.id %>">Edit</a> | <a href="/brand/remove/<%= brand.id %>">Remove</li>
     <% end %>
   </ul>
-  <a href="/brand/add">Add a brand</a>
+  <a href="/brand/add"><span class="glyphicon glyphicon-file"></span> Add a brand</a>
