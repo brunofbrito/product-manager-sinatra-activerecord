@@ -1,12 +1,17 @@
 <h1 class="text-uppercase text-center">Store manager</h1>
 
-<a href="/product/add">Add a product</a>
-
-<hr>
-
 <h2>Product List</h2>
   <ul>
     <% @products.each do |product| %>
     <li><%= product.name %> costs you <%= product.price %>€, made by <%= product.brand.name %> | <a href="/product/edit/<%= product.id %>">Edit</a></li>
     <% end %>
   </ul>
+  <a href="/product/add">Add a product</a>
+<hr>
+<h2>Category list</h1>
+  <ul>
+    <% @brands.each do |brand| %>
+    <li><a href="/brand/show/<%= brand.id %>"><%=brand.name %></a></li>
+    <% end %>
+  </ul>
+  <a href="/brand/add">Add a brand</a>
