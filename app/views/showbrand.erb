@@ -1,7 +1,7 @@
 <h1 class="text-uppercase text-center">Showing all <%= @brand.name %> products</h1>
 
 <ul>
-  <% @brands.each do |brand| %>
-  <li><%= brand.product.name %></li>
+    <% @products.each do |product| %>
+  <li><%= product.name %>, costs you <%= product.price %>€</li>
   <% end %>
 </ul>

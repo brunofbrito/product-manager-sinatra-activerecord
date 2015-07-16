@@ -1,0 +1,8 @@
+<h1 class="text-uppercase text-center">Edit a Brand</h1>
+
+<form class="user-form" action="/brand/edit/<%= @brand.id%>" method="post">
+    <label for="name">Brand</label>
+    <input type="text" name="name" id="name" value="<%= @brand.name%>" class="form-control" >
+    <br>
+    <button type="submit" class="btn btn-info">Edit this brand</button>
+  </form>

@@ -32,9 +32,8 @@ post "/product/edit/:id" do
 end
 
 get "/brand/show/:id" do
-  @products = Product.all
-  @brands = Brand.all
   @brand = Brand.find(params[:id])
+  @products = @brand.products
   erb :showbrand
 end
 
@@ -47,5 +46,15 @@ post "/brand/add" do
     name: params[:brandname]
     })
   brand.save
+  redirect "/"
+end
+
+get "/brand/edit/:id" do
+  @brand = Brand.find(params[:id])
+  erb :editbrand
+end
+
+post "/brand/edit/:id" do
+  Brand.update(params[:id], params.slice("name"))
   redirect "/"
 end
