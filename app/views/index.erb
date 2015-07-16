@@ -1,1 +1,12 @@
-<h1>Home Page</h1>
+<h1 class="text-uppercase text-center">Store manager</h1>
+
+<a href="/product/add">Add a product</a>
+
+<hr>
+
+<h2>Product List</h2>
+  <ul>
+    <% @products.each do |product| %>
+    <li><%= product.name %> by <%= product.brand.name %> | <a href="/product/edit/<%= product.id %>">Edit</a></li>
+    <% end %>
+  </ul>

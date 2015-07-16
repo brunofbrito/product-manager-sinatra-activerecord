@@ -1,0 +1,18 @@
+<h1 class="text-uppercase text-center">Add a Product</h1>
+
+<form class="user-form" action="/product/add" method="post">
+    <label for="name">Product Name</label>
+    <input type="text" name="name" id="name" placeholder="Insert your Product Name here" class="form-control" >
+    <label for="description">Product Description</label>
+    <textarea cols="3" name="description" id="description" placeholder="Insert your Product Description here" class="form-control" ></textarea>
+    <label for="price">Product Price</label>
+    <input type="number" name="price" id="price" placeholder="Insert your Product Price here" class="form-control" >
+    <label for="brand">Product Category</label>
+    <select name="brand" id="brand" class="form-control">
+      <% @brands.each do |brand| %>
+      <option value="<%= brand.id %>"><%= brand.name %></option>
+      <% end %>
+    </select>
+    <br>
+    <button type="submit" class="btn btn-info">Add this product</button>
+  </form>
